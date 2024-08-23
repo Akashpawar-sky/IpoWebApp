@@ -1,0 +1,14 @@
+
+
+{% extends 'IPO_App/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ ipo.name }}</h1>
+    <p>{{ ipo.description }}</p>
+    <p>Price Band: {{ ipo.price_band }}</p>
+    <p>Issue Size: {{ ipo.issue_size }}</p>
+    <!-- Additional IPO details here -->
+</div>
+{% endblock %}

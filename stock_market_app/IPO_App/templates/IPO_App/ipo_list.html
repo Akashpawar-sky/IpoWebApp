@@ -1,0 +1,47 @@
+{% extends 'IPO_App/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Upcoming IPOs</h2>
+    <div class="row">
+        {% for ipo in ipos %}
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                <img src="{{ ipo.company_logo.url }}" class="card-img-top" alt="{{ ipo.company_name }} logo">
+                <div class="card-body">
+                    <h5 class="card-title">{{ ipo.company_name }}</h5>
+                    <p class="card-text">Price Band: ₹{{ ipo.price_band }}</p>
+                    <p class="card-text">Open Date: {{ ipo.open_date }}</p>
+                    <p class="card-text">Close Date: {{ ipo.close_date }}</p>
+                    <p class="card-text">Issue Size: {{ ipo.issue_size }}</p>
+                    <p class="card-text">Issue Type: {{ ipo.issue_type }}</p>
+                    <a href="{{ ipo.rhp_pdf.url }}" class="btn btn-outline-primary btn-sm">RHP</a>
+                    <a href="{{ ipo.drhp_pdf.url }}" class="btn btn-outline-secondary btn-sm">DRHP</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- FAQ Section -->
+<section class="container faq-section mt-5">
+    <h3>Frequently Asked Questions</h3>
+    <div class="faq-item">
+        <div class="faq-header">How to Subscribe to an IPO?</div>
+        <div class="faq-answer">
+            <p>Step 1: Login to your respective service provider.<br>
+               Step 2: Click on the IPO button.<br>
+               Step 3: Select the IPO you want to bid and enter the relevant details.<br>
+               Step 4: Complete your subscription by making the payment or giving permission.
+            </p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <div class="faq-question">Should I buy an IPO on the first day?</div>
+        <div class="faq-answer">It depends on market conditions...</div>
+    </div>
+    <!-- Add more FAQ items here -->
+</section>
+{% endblock %}
