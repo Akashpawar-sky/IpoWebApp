@@ -4,4 +4,6 @@
 /admin    ==to redirect admin login portal   
 #Username -  akash
 #password -  Pass@123  
+
+# To create virtual environment install requirements.txt file
  
